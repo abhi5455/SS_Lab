@@ -9,12 +9,12 @@ int main() {
     int start, locctr, error = 0, op_found = 0, length, size;
 
     FILE *fp1, *fp2, *fp3, *fp4, *fp5, *fp6;
-    fp1 = fopen("./Two_Pass_Assembler/input.txt", "r");
-    fp2 = fopen("./Two_Pass_Assembler/optab.txt", "r");
-    fp3 = fopen("./Two_Pass_Assembler/symtab.txt", "w");
-    fp4 = fopen("./Two_Pass_Assembler/intermediate.txt", "w");
-    fp5 = fopen("./Two_Pass_Assembler/length.txt", "w");
-    fp6 = fopen("./Two_Pass_Assembler/symtab.txt", "r");
+    fp1 = fopen("input.txt", "r");
+    fp2 = fopen("optab.txt", "r");
+    fp3 = fopen("symtab.txt", "w");
+    fp4 = fopen("intermediate.txt", "w");
+    fp5 = fopen("length.txt", "w");
+    fp6 = fopen("symtab.txt", "r");
     if (fp1 == NULL || fp2 == NULL || fp3 == NULL || fp4 == NULL || fp5 == NULL || fp6 == NULL) {
         printf("ERROR OPENING FILE");
         return 0;
