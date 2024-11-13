@@ -1,0 +1,35 @@
+ASSUME CS:CODE, DS:DATA
+DATA SEGMENT
+    STR1 DB 11H,22H,33H,44H,55H
+    M1 DB 10,13"FOUND$"
+    M2 DB 10,13"NOT FOUND$"
+    SE DB 55H
+DATA ENDS    
+
+PRTMSG MACRO MESSAGE
+    LEA DX,MESSAGE
+    MOV AH,09
+    INT 21H
+    ENDM
+
+CODE SEGMENT
+START:  MOV AX,DATA
+        MOV DS,AX
+        MOV AL,SE
+        LEA SI,STR1
+        MOV CX,05H
+
+    UP: MOV BL,[SI]
+        CMP AL,BL
+        JZ FO
+        INC SI
+        DEC CX
+        JNZ UP
+        PRTMSG M2
+        JMP END1
+
+    FO: PRTMSG M1
+  END1: MOV AH,4CH
+        INT 21H
+CODE ENDS
+END START
