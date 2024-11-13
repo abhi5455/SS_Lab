@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 #include <stdlib.h>
 
 char t1[20],t2[20],t3[20],t4[10],address[10],label[10],opcode[10],operand[10],length[10],size[10],a[10],ad[10],st_addr[10];
@@ -102,11 +101,11 @@ void read_line()
 
 int main()
 {
-    fp1=fopen("output.txt", "r");
+    fp1=fopen("intermediate.txt", "r");
     fp2=fopen("symtab.txt", "r");
     fp3=fopen("optab.txt", "r");
     fp4=fopen("length.txt", "r");
-    fp5=fopen("output2.txt", "w");
+    fp5=fopen("output.txt", "w");
     fp6=fopen("object_program.txt", "w");
 
     if (fp1==NULL||fp2==NULL||fp3==NULL||fp4==NULL||fp5==NULL||fp6==NULL)
@@ -127,7 +126,7 @@ int main()
     {
         fprintf(fp5,"%s\t%s\t%s\t%s\n",address,label,opcode,operand); // Print header line in assembly listing
         fprintf(fp6,"H^%s^00%s^0000%s\n",label,operand,length);
-        fprintf(fp6,"T^00%s^F",operand);
+        fprintf(fp6,"T^00%s^%s",operand,size);
         read_line();
     }
 
@@ -214,4 +213,3 @@ int main()
 
     return 0;
 }
-
