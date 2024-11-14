@@ -169,32 +169,26 @@ int main()
         {
             // Look for opcode in OPTAB
             i = 0;
-            while (i <= o && strcmp(opcode, OT[i].opcode) != 0)
-            {
+            while (i <= o && strcmp(opcode, OT[i].opcode) != 0) {
                 i++;
             }
 
-            if (i > o)
-            {
+            if (i > o) {
                 printf("Error: Opcode %s not found in OPTAB\n", opcode);
             }
-            else
-            {
+            else {
                 // Look for operand in SYMTAB
                 j = 0;
-                while (j <= s && strcmp(operand, ST[j].label) != 0)
-                {
+                while (j <= s && strcmp(operand, ST[j].label) != 0) {
                     j++;
                 }
 
-                if (j > s)
-                {
-                    printf("Error: Operand %s not found in SYMTAB\n",operand);
+                if (j > s) {
+                    printf("Error: Operand %s not found in SYMTAB\n", operand);
                 }
-                else
-                {
-                    fprintf(fp5,"%s\t%s\t%s\t%s\t%s%s\n",address,label,opcode,operand,OT[i].hexcode,ST[j].addr);
-                    fprintf(fp6,"^%s%s",OT[i].hexcode,ST[j].addr);
+                else {
+                    fprintf(fp5, "%s\t%s\t%s\t%s\t%s%s\n", address, label, opcode, operand, OT[i].hexcode, ST[j].addr);
+                    fprintf(fp6, "^%s%s", OT[i].hexcode, ST[j].addr);
                 }
             }
         }
