@@ -198,6 +198,8 @@ int main()
     fprintf(fp5,"%s\t%s\t%s\t%s\t%s\n","*",label,opcode,operand,"*");
     fprintf(fp6,"\nE^00%s\n",st_addr);  // Write end record to object code
 
+    printf("OBJECT CODE GENERATED SUCCESSFULLY\n");
+
     fclose(fp1);
     fclose(fp2);
     fclose(fp3);
