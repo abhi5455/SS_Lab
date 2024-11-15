@@ -219,34 +219,16 @@ void write_symtab(){
 }
 
 void main() {
+
     f1 = fopen("input.txt", "r");
-    if (f1 == NULL) {
-        perror("Error opening input.txt");
-        exit(1);
-    }
-
     f2 = fopen("optab.txt", "r");
-    if (f2 == NULL) {
-        perror("Error opening optab.txt");
-        fclose(f1); // Ensure previous file is closed
-        exit(1);
-    }
-
     f3 = fopen("output1.txt", "w");
-    if (f3 == NULL) {
-        perror("Error opening output.txt");
-        fclose(f1);
-        fclose(f2);
-        exit(1);
-    }
-
     f4 = fopen("symtab1.txt", "w");
-    if (f4 == NULL) {
-        perror("Error opening symtab.txt");
-        fclose(f1);
-        fclose(f2);
-        fclose(f3);
-        exit(1);
+
+    if (f1==NULL||f2==NULL||f3==NULL||f4==NULL)
+    {
+        printf("Error opening files\n");
+        return 1;
     }
 
     one_pass();
