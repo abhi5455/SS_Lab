@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void main()
+int main()
 {
     char label[10],opcode[10],operand[10],code[10],mnemonic[3];
     int locctr,start,length,sym_count=0,size,prevlocctr=0;
@@ -17,6 +17,12 @@ void main()
     fp4=fopen("symtab.txt","w");
     fp5=fopen("length.txt","w");
     fscanf(fp1,"%s\t%s\t%s",label,opcode,operand);
+
+    if (fp1==NULL||fp2==NULL||fp3==NULL||fp4==NULL||fp5==NULL)
+    {
+        printf("Error opening files\n");
+        return 1;
+    }
 
     if(strcmp(opcode,"START")==0)
     {
