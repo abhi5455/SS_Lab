@@ -60,7 +60,6 @@ int main()
                     fprintf(fp4,"%s\t%X\n",label,locctr);
                 }
             }
-            fscanf(fp3,"%s\t%s",code,mnemonic);
             if(strcmp(opcode,"WORD")==0)
             {
                 prevlocctr=locctr;
