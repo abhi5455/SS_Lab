@@ -218,7 +218,7 @@ void write_symtab(){
     }
 }
 
-void main() {
+int main() {
 
     f1 = fopen("input.txt", "r");
     f2 = fopen("optab.txt", "r");
@@ -242,7 +242,8 @@ void main() {
     fclose(f3);
     fclose(f4);
 
-
     Free();
+
+    return 0;
 }
 
