@@ -8,7 +8,7 @@
 2. System Software Programs
       - Implement pass one of a Two Pass Assembler.
       - Implement pass two of a Two Pass Assembler.
-      - Implement a One Pass Assembler.
+      - Implement One Pass Assembler.
         
 3. MASM Programs
       - 8 Bit Addition of 2 Numbers.
